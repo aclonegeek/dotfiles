@@ -1,39 +1,55 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible	" required for vundle
+filetype off		" required for vundle
 
-" begin vundle block
+" setup vundle
 set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-call vundle#begin('$USERPOFILE/vimfiles/bundle/')
+call vundle#begin('$HOME/vimfiles/bundle/')
 
+" vundle config
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 
-call vundle#end()            " required
+call vundle#end()
 filetype plugin indent on    " required
-" end vundle block
 
-au GUIEnter * simalt ~x " fullscreen
+au GUIEnter * simalt ~x		 " set gvim fullscreen
 
+set makeprg=clang++
+
+"""""""""
+"display"
+"""""""""
 syntax on
+colorscheme luna
 set number
-set backspace=indent,eol,start
-
-set guioptions-=m	" remove menu
+set background=dark
+set cursorline		" highlights the current line
+set noshowmode
+set guioptions-=m	" remove menu bar
 set guioptions-=T	" remove toolbar
-set guioptions-=r	" remove scrollbar
-set t_vb=""		" no beeping
+set guioptions-=r	" remove right-hand scroll bar
+set guioptions-=L	" remove left-hand scroll bar
+set guioptions-=R
+set t_vb=""			" no beeping
 
+""""""""
+"editor"
+""""""""
+set backspace=indent,eol,start
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab		" turns tabs into spaces
+set history=1000
+set undolevels=1000
 
-colorscheme luna
-
-" airline specific
+""""""""""
+"plugins"
+""""""""""
+" airline 
 set encoding=utf-8
-set laststatus=2
+set laststatus=2	" airline always on
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "dark"
 let g:airline#extensions#tabline#enabled = 1
