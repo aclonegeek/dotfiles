@@ -7,6 +7,7 @@ call vundle#begin('$USERPOFILE/vimfiles/bundle/')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
