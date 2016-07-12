@@ -1,6 +1,12 @@
 # mod
 set $mod Mod4
 
+set $bg-colour 	          #2f343f
+set $inactive-bg-colour   #2f343f
+set $text-colour          #f3f4f5
+set $inactive-text-colour #676E7D
+set $urgent-bg-colour     #E53935
+
 # font
 font pango:System San Francisco Display 10
 
@@ -121,12 +127,6 @@ mode "resize" {
 # resize mode
 bindsym $mod+r mode "resize"
 
-set $bg-colour 	          #2f343f
-set $inactive-bg-colour   #2f343f
-set $text-colour          #f3f4f5
-set $inactive-text-colour #676E7D
-set $urgent-bg-colour     #E53935
-
 # window colours
 #                       border               background          text                  indicator
 client.focused          $bg-colour           $bg-colour          $text-colour          #00ff00
@@ -136,8 +136,13 @@ client.urgent           $urgent-bg-colour    $urgent-bg-colour   $text-colour   
 
 hide_edge_borders both
 
+# disable window title
+for_window [class="^.*"] border pixel 1
+bindsym Control+Shift+1 [class="^.*"] border toggle
+
 # bar
 bar {
+        i3bar_command i3bar -t
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         tray_output primary
         position top
@@ -162,10 +167,11 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 ### KEY BINDINGS ###
 ####################
 # rofi
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "85" -bw 0 -bc "$bg-colour" -bg "$bg-colour" -fg "$text-colour" -hlbg "$bg-colour" -hlfg "#9575cd" -font "System San Francisco Display 14"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "85" -font "System San Francisco Display 14"
 ####################
 # Lock screen
-bindsym $mod+shift+x exec i3lock --color "$bg-colour"
+#bindsym $mod+shift+x exec i3lock --color "$bg-colour"
+bindsym $mod+shift+x exec lock.sh
 ####################
 # ALSA Mixer controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
@@ -189,7 +195,8 @@ bindsym XF86AudioPrev exec rhythmbox previous
 ##################
 ### AUTO START ###
 ##################
-exec_always --no-startup-id feh --bg-scale /home/randyt/Pictures/wallpaper.jpg
+exec_always --no-startup-id xrandr --output HDMI1 --auto --output eDP1 --auto --right-of HDMI1
+exec_always --no-startup-id feh --bg-scale /home/randy/Pictures/wallpaper.jpg
 exec_always --no-startup-id redshift
 exec_always --no-startup-id compton -f
 ##################
