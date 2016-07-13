@@ -1,8 +1,8 @@
 # mod
 set $mod Mod4
 
-set $bg-colour 	          #2f343f
-set $inactive-bg-colour   #2f343f
+set $bg-colour 	          #26323888
+set $inactive-bg-colour   #26323888
 set $text-colour          #f3f4f5
 set $inactive-text-colour #676E7D
 set $urgent-bg-colour     #E53935
@@ -137,8 +137,10 @@ client.urgent           $urgent-bg-colour    $urgent-bg-colour   $text-colour   
 hide_edge_borders both
 
 # disable window title
-for_window [class="^.*"] border pixel 1
-bindsym Control+Shift+1 [class="^.*"] border toggle
+for_window [class="^.*"] border pixel 0
+
+gaps inner 0
+gaps outer 0
 
 # bar
 bar {
@@ -148,7 +150,7 @@ bar {
         position top
         colors {
 		background $bg-colour
-	    	separator #757575
+		separator  #757575
 		#                  border              background          text
 		focused_workspace  $bg-colour          $bg-colour          $text-colour
 		inactive_workspace $inactive-bg-colour $inactive-bg-colour $inactive-text-colour
