@@ -1,15 +1,31 @@
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
+! --- ROFI ---
+rofi.font: System San Francisco Display 36
+rofi.fullscreen: true
+rofi.width: 50
+rofi.padding: 300
+rofi.location: 0
+rofi.bw: 0
+rofi.eh: 1
+rofi.fixed-num-lines: true
+rofi.lines: 3
 rofi.color-enabled: true
-rofi.color-window: #273238, #273238, #1e2529
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
-rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+rofi.color-window: argb:aa263238, argb:aa263238, #26a69a
+rofi.color-normal: argb:0263238, #eceff1, argb:0263238, #f4246b, #eceff1
+rofi.color-active: #fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3
+rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
 
-! URXVT
-URxvt.font: xft:Source Code Pro:size=14
+! --- URXVT ---
+URxvt.font: xft:Ubuntu Mono:size=14
 URxvt.scrollBar: false
+
+URxvt*background: #192226
+URxvt*foreground: #eceff1
+URxvt*cursorColor: #eceff1
+
+URxvt.keysym.Shift-Control-V:perl:clipboard:paste
+URxvt.iso14755: False
+
+URxvt.perl-ext-common: default,clipboard
 
 ! special
 *.foreground:   #c5c8c6
@@ -17,44 +33,33 @@ URxvt.scrollBar: false
 *.cursorColor:  #c5c8c6
  
 ! black
-*.color0:       #1d1f21
-*.color8:       #969896
+*.color0:       #263238
+*.color8:       #37474f
  
 ! red
 *.color1:       #cc342b
 *.color9:       #cc342b
  
 ! green
-*.color2:       #198844
-*.color10:      #198844
+*.color2:       #8bc34a
+*.color10:      #9ccc65
  
 ! yellow
-*.color3:       #fba922
-*.color11:      #fba922
+*.color3:       #ffc107
+*.color11:      #ffa000
  
 ! blue
-*.color4:       #3971ed
-*.color12:      #3971ed
+*.color4:       #03a9f4
+*.color12:      #81d4fa
  
 ! magenta
-*.color5:       #a36ac7
-*.color13:      #a36ac7
+*.color5:       #EF4981
+*.color13:      #ad1457
  
 ! cyan
-*.color6:       #0f73fb
-*.color14:      #0f73fb
+*.color6:       #009688
+*.color14:      #26a69a
  
 ! white
-*.color7:       #c5c8c6
-*.color15:      #ffffff
-
-! Background color
-URxvt*background: black
-
-! Font color
-URxvt*foreground: white
-
-URxvt.keysym.Shift-Control-V:perl:clipboard:paste
-URxvt.iso14755: False
-
-URxvt.perl-ext-common: default,clipboard
+*.color7:       #cfd8dc
+*.color15:      #eceff1
