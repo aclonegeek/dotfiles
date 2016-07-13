@@ -169,7 +169,7 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 ### KEY BINDINGS ###
 ####################
 # rofi
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "85" -font "System San Francisco Display 14"
+bindsym $mod+d exec rofi -show run
 ####################
 # Lock screen
 #bindsym $mod+shift+x exec i3lock --color "$bg-colour"
