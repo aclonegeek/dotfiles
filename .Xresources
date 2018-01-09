@@ -1,18 +1,19 @@
 ! --- ROFI ---
-rofi.font: System San Francisco Display 30
-rofi.fullscreen: true
-rofi.width: 50
-rofi.padding: 300
-rofi.location: 0
+rofi.color-enabled: true
+!                  'bg'     'border' 'dividing line'
+rofi.color-window: #2E3440, #D8DEE9, #D8DEE9
+!                  'bg'    'fg'      'bgalt'    'hlbg'   'hlfg'
+rofi.color-normal: #2E3440, #D8DEE9, #2E3440,   #5E81AC, #2E3440
+rofi.color-active: #D8DEE9, #5E81AC, #00000000, #D8DEE9, #000000
+rofi.color-urgent: #D8DEE9, #5E81AC, #00000000, #D8DEE9, #000000
+
+rofi.font: System San Francisco Display 15
+rofi.fullscreen: false
+rofi.padding: 2
 rofi.bw: 0
 rofi.eh: 1
-rofi.fixed-num-lines: true
-rofi.lines: 5
-rofi.color-enabled: true
-rofi.color-window: argb:aa263238, argb:aa263238, #26a69a
-rofi.color-normal: argb:0263238, #eceff1, argb:0263238, #f4246b, #eceff1
-rofi.color-active: #fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3
-rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
+rofi.lines: 8
+rofi.hide-scrollbar: true
 
 ! --- URXVT ---
 URxvt.font: xft:Ubuntu Mono:size=14
