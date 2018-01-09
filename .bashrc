@@ -8,10 +8,11 @@
 eval "$(thefuck --alias)"
 alias l='ls -l --color=auto'
 alias la='ls -al --color=auto'
-alias dpl='drive pull School/University/Year\ 2/Semester\ 2/'
+alias dpl='drive pull School/University/Year\ 3/Semester\ 1/'
 alias won='systemctl start connman'
+alias wdied='systemctl restart connman'
 alias upd='sudo pacman -Syu'
-alias school='cd && cd gdrive/School/University/Year\ 2/Semester\ 2/'
+alias school='cd && cd gdrive/School/University/Year\ 3/Semester\ 1/'
 alias pg='ping -c 3 www.google.com'
 alias m='make'
 alias gd='git diff'
