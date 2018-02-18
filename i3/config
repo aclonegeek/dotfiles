@@ -200,6 +200,6 @@ bindsym XF86AudioPrev exec rhythmbox previous
 exec_always --no-startup-id xrandr --output eDP1 --auto
 exec_always --no-startup-id feh --bg-scale /home/randy/Pictures/wallpaper.jpg
 exec_always --no-startup-id redshift
-exec_always --no-startup-id compton -f
+exec_always --no-startup-id compton --config ~/.config/compton.conf
 exec_always --no-startup-id systemctl start connman
 ##################
