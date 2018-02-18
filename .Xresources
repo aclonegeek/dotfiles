@@ -8,6 +8,7 @@ rofi.color-active: #D8DEE9, #5E81AC, #00000000, #D8DEE9, #000000
 rofi.color-urgent: #D8DEE9, #5E81AC, #00000000, #D8DEE9, #000000
 
 rofi.font: System San Francisco Display 15
+rofi.theme: srcery
 rofi.fullscreen: false
 rofi.padding: 2
 rofi.bw: 0
