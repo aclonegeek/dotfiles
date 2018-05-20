@@ -28,5 +28,3 @@ alias won='systemctl start connman'
 alias upd='trizen -Su'
 
 PS1='[\u@\h \W]\$ '
-export GOPATH=$HOME/gopath
-export PATH=$GOPATH:$GOPATH/bin:$PATH
