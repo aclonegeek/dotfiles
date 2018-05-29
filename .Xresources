@@ -17,7 +17,7 @@ rofi.lines: 8
 rofi.hide-scrollbar: true
 
 ! --- URXVT ---
-URxvt.font: xft:Ubuntu Mono:size=14
+URxvt.font: xft:Iosevka:size=14
 URxvt.scrollBar: false
 
 URxvt*background: #192226
