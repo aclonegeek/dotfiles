@@ -8,7 +8,7 @@ set $inactive-text-colour #676E7D
 set $urgent-bg-colour     #E53935
 
 # font
-font pango:System San Francisco Display 10
+font pango:Noto Mono 10
 
 # drag windows
 floating_modifier $mod
@@ -134,22 +134,6 @@ for_window [class="^.*"] border pixel 0
 gaps inner 0
 gaps outer 0
 
-# bar
-bar {
-        i3bar_command i3bar -t
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        tray_output primary
-        position top
-        colors {
-		background $bg-colour
-		separator  #757575
-		#                  border              background          text
-		focused_workspace  $bg-colour          $bg-colour          $text-colour
-		inactive_workspace $inactive-bg-colour $inactive-bg-colour $inactive-text-colour
-		urgent_workspace   $urgent-bg-colour   $urgent-bg-colour   $text-colour
-	}
-}
-
 ######################
 ### KEY INDICATORS ###
 ######################
@@ -189,7 +173,8 @@ bindsym XF86AudioPrev exec rhythmbox previous
 ##################
 ### AUTO START ###
 ##################
-exec_always --no-startup-id xrandr --output eDP1 --auto
+exec_always --no-startup-id xrandr --output VGA-1 --mode 1600x900
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale /home/randy/Pictures/wallpaper.jpg
 exec_always --no-startup-id redshift
 exec_always --no-startup-id compton --config ~/.config/compton.conf
