@@ -160,9 +160,6 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 ####################
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /usr/local/bin/toggletouchpad.sh # toggle touchpad
-####################
 # Media player controls
 bindsym XF86AudioPlay exec rhythmbox play
 bindsym XF86AudioPause exec rhythmbox pause
@@ -173,10 +170,10 @@ bindsym XF86AudioPrev exec rhythmbox previous
 ##################
 ### AUTO START ###
 ##################
-exec_always --no-startup-id xrandr --output VGA-1 --mode 1600x900
+exec_always --no-startup-id $HOME/.screenlayout/default.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale /home/randy/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg
 exec_always --no-startup-id redshift
-exec_always --no-startup-id compton --config ~/.config/compton.conf
+#exec_always --no-startup-id compton --config ~/.config/compton.conf
 exec_always --no-startup-id systemctl start connman
 ##################
