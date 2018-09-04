@@ -41,11 +41,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+b split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# split
+bindsym $mod+b split h # horizontal
+bindsym $mod+v split v # vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -60,12 +58,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -139,8 +131,7 @@ gaps outer 0
 bindsym $mod+d exec rofi -show run
 ####################
 # Lock screen
-#bindsym $mod+shift+x exec i3lock --color "$bg-colour"
-bindsym $mod+shift+x exec lock.sh
+bindsym $mod+Shift+x exec betterlockscreen --lock
 ####################
 # ALSA Mixer controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
@@ -148,14 +139,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 ####################
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-####################
-# Media player controls
-bindsym XF86AudioPlay exec rhythmbox play
-bindsym XF86AudioPause exec rhythmbox pause
-bindsym XF86AudioNext exec rhythmbox next
-bindsym XF86AudioPrev exec rhythmbox previous
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10   # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 ####################
 
 ##################
@@ -163,7 +148,8 @@ bindsym XF86AudioPrev exec rhythmbox previous
 ##################
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/w.jpg
+exec_always --no-startup-id betterlockscreen -w
 exec_always --no-startup-id redshift
 #exec_always --no-startup-id compton --config ~/.config/compton.conf
 exec_always --no-startup-id systemctl start connman
