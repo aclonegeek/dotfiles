@@ -76,12 +76,12 @@ type = internal/network
 interface = wlp3s0
 interval = 3
 
-format-connected-prefix = ""
+format-connected-prefix = " "
 format-connected = <label-connected>
 format-connected-underline = ${colors.green}
-label-connected = %signal% %essid%
+label-connected = %signal%% %essid%
 
-format-disconnected-prefix = "" 
+format-disconnected-prefix = " "
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.red}
 label-disconnected = %ifname% disconnected
