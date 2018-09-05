@@ -1,17 +1,20 @@
 [colors]
-;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+blue = #0a6cf5
+green = #00ff00
+red = #ff0000
+yellow = #fdee00
+
 [bar/vegabar]
 ; TODO(randy): Fetch monitor automagically!
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:DP-3}
 width = 100%
 height = 2.5%
 radius = 0.0
@@ -36,13 +39,11 @@ font-0 = Noto Sans Mono:pixelsize=10
 font-1 = FontAwesome:size=10:
 
 modules-left = i3
-modules-center = 
-modules-right = wlan eth battery xkeyboard volume date
+modules-center =
+modules-right = wlan battery xkeyboard volume date
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -53,10 +54,14 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+pin-workspaces = true
+
 label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
+
+label-focused-underline = #ffffff
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -72,58 +77,30 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected =  <label-connected>
+format-connected-prefix = ""
+format-connected = <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %signal%%
 
+format-disconnected-prefix = 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-[module/eth]
-type = internal/network
-interface = 
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume-prefix = " "
+format-volume = <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
+format-volume-underline = ${colors.green}
 
-format-muted-prefix = " "
+format-muted-prefix = " "
+label-muted = muted
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+format-muted-underline = ${colors.red}
 
 [module/battery]
 type = internal/battery
@@ -131,11 +108,14 @@ battery = BAT1
 adapter = AC
 full-at = 100
 
+format-full = <ramp-capacity> <label-full>
+format-full-underline = ${colors.green}
+
 format-charging = <ramp-capacity> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.yellow}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.red}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -149,11 +129,10 @@ type = internal/date
 interval = 5
 
 date = "%a %d"
-time = %I:%M
+time = %H:%M
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.blue}
 
 label = %date% %time%
 
