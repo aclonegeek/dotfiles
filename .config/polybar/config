@@ -39,7 +39,7 @@ font-1 = FontAwesome:size=10:
 
 modules-left = i3
 modules-center =
-modules-right = wlan battery xkeyboard pulseaudio time powermenu
+modules-right = wireless-network battery xkeyboard pulseaudio time powermenu
 
 tray-position = right
 tray-padding = 2
@@ -71,15 +71,15 @@ label-indicator-margin = 0
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/wlan]
+[module/wireless-network]
 type = internal/network
 interface = wlp3s0
-interval = 3.0
+interval = 3
 
 format-connected-prefix = ""
 format-connected = <label-connected>
 format-connected-underline = ${colors.green}
-label-connected = %signal%%
+label-connected = %signal% %essid%
 
 format-disconnected-prefix = "" 
 format-disconnected = <label-disconnected>
@@ -110,9 +110,11 @@ full-at = 100
 format-full = <ramp-capacity> <label-full>
 format-full-underline = ${colors.green}
 
+label-charging = %percentage%% (%time%)
 format-charging = <ramp-capacity> <label-charging>
 format-charging-underline = ${colors.yellow}
 
+label-discharging = %percentage%% (%time%)
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${colors.red}
 
