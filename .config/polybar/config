@@ -13,8 +13,7 @@ red = #ff0000
 yellow = #fdee00
 
 [bar/vegabar]
-; TODO(randy): Fetch monitor automagically!
-monitor = ${env:MONITOR:DP-3}
+monitor = ${env:MONITOR}
 width = 100%
 height = 2.5%
 radius = 0.0
