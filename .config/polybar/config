@@ -29,7 +29,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 1
 
 module-margin-left = 0
 module-margin-right = 1
@@ -39,7 +39,7 @@ font-1 = FontAwesome:size=10:
 
 modules-left = i3
 modules-center =
-modules-right = wlan battery xkeyboard pulseaudio time
+modules-right = wlan battery xkeyboard pulseaudio time powermenu
 
 tray-position = right
 tray-padding = 2
@@ -132,6 +132,32 @@ time = %H:%M
 format-prefix = " "
 format-underline = ${colors.blue}
 label = %time%
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close = cancel
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = shutdown
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
