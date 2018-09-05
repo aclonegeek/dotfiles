@@ -79,12 +79,12 @@ interval = 3.0
 
 format-connected-prefix = ""
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.green}
 label-connected = %signal%%
 
-format-disconnected-prefix = 
+format-disconnected-prefix = "" 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-underline = ${colors.red}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
