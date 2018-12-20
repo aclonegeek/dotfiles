@@ -23,8 +23,9 @@ alias gs='git status'
 alias ecfg='cd ~/.emacs.d'
 alias m='make'
 alias pg='ping -c 3 www.google.com'
-alias school='cd && cd School/University/Year\ 3/Semester\ 2/'
 alias won='systemctl start connman'
-alias upd='trizen -Su'
+alias ytdl='youtube-dl --extract-audio --audio-format mp3 $1'
 
 PS1='[\u@\h \W]\$ '
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
