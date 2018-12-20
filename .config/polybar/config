@@ -39,7 +39,7 @@ font-1 = FontAwesome:size=10:
 
 modules-left = i3
 modules-center =
-modules-right = wireless-network battery xkeyboard pulseaudio time powermenu
+modules-right = wireless-network battery xkeyboard pulseaudio time
 
 tray-position = right
 tray-padding = 2
@@ -76,12 +76,12 @@ type = internal/network
 interface = wlp3s0
 interval = 3
 
-format-connected-prefix = " "
+format-connected-prefix = ""
 format-connected = <label-connected>
 format-connected-underline = ${colors.green}
-label-connected = %signal%% %essid%
+label-connected = %signal% %essid%
 
-format-disconnected-prefix = " "
+format-disconnected-prefix = "" 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.red}
 label-disconnected = %ifname% disconnected
@@ -134,32 +134,6 @@ time = %H:%M
 format-prefix = " "
 format-underline = ${colors.blue}
 label = %time%
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close = cancel
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = shutdown
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = systemctl reboot
-
-menu-2-0 = shutdown
-menu-2-0-exec = systemctl poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true

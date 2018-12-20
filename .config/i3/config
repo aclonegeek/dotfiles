@@ -151,6 +151,5 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/w.jpg
 exec_always --no-startup-id betterlockscreen -w
 exec_always --no-startup-id redshift
-#exec_always --no-startup-id compton --config ~/.config/compton.conf
 exec_always --no-startup-id systemctl start connman
 ##################
