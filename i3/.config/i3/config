@@ -148,8 +148,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 ##################
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/w.jpg
-exec_always --no-startup-id betterlockscreen -w
+exec_always --no-startup-id source ~/.fehbg
 exec_always --no-startup-id redshift
 exec_always --no-startup-id systemctl start connman
 ##################
