@@ -1,0 +1,9 @@
+configuration {
+    theme: "theme";
+    fullscreen: false;
+    font: "Noto Mono 15";
+    bw: 0;
+    eh: 1;
+    lines: 8;
+    hide-scrollbar: true;
+}
