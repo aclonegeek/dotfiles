@@ -5,7 +5,7 @@ My personal dotfiles that are managed using [GNU stow](https://www.gnu.org/softw
 ``` shell
 git clone https://gitlab.com/aclonegeek/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-stow x bash screenlayout i3 polybar rofi redshift zathura vim
+stow x bash screenlayout i3 polybar rofi redshift zathura vim alacritty
 ```
 
 # Packages
