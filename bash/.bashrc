@@ -6,9 +6,9 @@
 [[ $- != *i* ]] && return
 
 # ls stuff
-alias l='ls -l --color=auto'
-alias la='ls -al --show-control-chars -F --color'
-alias ls='ls --show-control-chars -F --color'
+alias l='ls -l'
+alias la='ls -al'
+alias ls='lsd'
 
 # git stuff
 alias ga='git add $*'
@@ -25,6 +25,8 @@ alias m='make'
 alias pg='ping -c 3 www.google.com'
 alias won='systemctl start connman'
 alias ytdl='youtube-dl --extract-audio --audio-format mp3 $1'
+
+source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
 
 PS1='[\u@\h \W]\$ '
 
