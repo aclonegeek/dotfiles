@@ -30,4 +30,6 @@ source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
 
 PS1='[\u@\h \W]\$ '
 
+export HISTSIZE=
+export HISTFILESIZE=
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
