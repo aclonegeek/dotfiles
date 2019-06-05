@@ -8,5 +8,4 @@ cd ~/.dotfiles
 stow x bash screenlayout i3 polybar rofi redshift zathura vim alacritty
 ```
 
-# Packages
-TODO
+# [Packages](packages)
