@@ -1,7 +1,7 @@
 # mod
 set $mod Mod4
 
-set $bg-colour 	          #26323888
+set $bg-colour            #26323888
 set $inactive-bg-colour   #26323888
 set $text-colour          #f3f4f5
 set $inactive-text-colour #676E7D
@@ -150,5 +150,4 @@ exec_always --no-startup-id $HOME/.screenlayout/default.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id source ~/.fehbg
 exec_always --no-startup-id redshift
-exec_always --no-startup-id systemctl start connman
 ##################

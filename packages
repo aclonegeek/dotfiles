@@ -1,12 +1,12 @@
 alacritty
 arandr
+arc-gtk-theme
 aspell
 aspell-en
 betterlockscreen
 ccls-git
 clang
 cmake
-connman (only for laptop, TODO switch to systemd-network)
 curl
 emacs (build from git)
 evince
