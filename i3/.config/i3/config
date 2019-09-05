@@ -131,7 +131,7 @@ gaps outer 0
 bindsym $mod+d exec rofi -show run
 ####################
 # Lock screen
-bindsym $mod+Shift+x exec betterlockscreen --lock
+bindsym $mod+Shift+x exec i3lock -c 000000 -e
 ####################
 # ALSA Mixer controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
