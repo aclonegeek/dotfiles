@@ -18,7 +18,6 @@ fzf
 gcc
 gdb
 git
-gzip
 hunspell
 i3-gaps
 i3lock
@@ -27,7 +26,6 @@ libreoffice-fresh
 mpv
 noto-fonts
 p7zip
-pavucontrol
 polybar-git
 pulseaudio
 python
@@ -39,7 +37,6 @@ rofi
 stow
 tar
 thunar
-thunar-archive-plugin
 ttf-carlito
 ttf-font-awesome-4
 ttf-iosevka
