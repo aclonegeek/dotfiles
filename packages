@@ -31,16 +31,13 @@ pulseaudio
 python
 python-pip
 redshift
-rhythmbox
 ripgrep
 rofi
 stow
-tar
 thunar
 ttf-carlito
 ttf-font-awesome-4
 ttf-iosevka
-ttf-liberation
 unrar
 unzip
 valgrind
