@@ -1,5 +1,5 @@
 # Global properties
-command=~/.config/i3blocks/scripts/$BLOCK_NAME
+command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=10
 markup=none
 
