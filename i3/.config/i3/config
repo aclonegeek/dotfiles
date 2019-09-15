@@ -124,30 +124,48 @@ for_window [class="^.*"] border pixel 0
 gaps inner 0
 gaps outer 0
 
+bar {
+    status_command   SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+    position         top
+    separator_symbol " "
+
+    colors {
+        background #222222
+        statusline #DFDFDF
+
+        focused_workspace  #222222 #222222 #DFDFDF
+        active_workspace   #222222 #222222 #555555
+        inactive_workspace #222222 #222222 #555555
+    }
+}
+
 ####################
 ### KEY BINDINGS ###
 ####################
 # rofi
 bindsym $mod+d exec rofi -show run
 ####################
-# Lock screen
+# lock screen
 bindsym $mod+Shift+x exec i3lock -c 000000 -e
 ####################
-# ALSA Mixer controls
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+# caps and num lock
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 ####################
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10   # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+# audio controls
+bindsym XF86AudioMute        exec pactl set-sink-mute 1 toggle    && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute && pkill -RTMIN+10 i3blocks
+####################
+# screen brightness controls
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 ####################
 
 ##################
 ### AUTO START ###
 ##################
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id source ~/.fehbg
 exec_always --no-startup-id redshift
 ##################

@@ -19,6 +19,7 @@ gcc
 gdb
 git
 hunspell
+i3blocks
 i3-gaps
 i3lock
 keepassxc
@@ -26,13 +27,13 @@ libreoffice-fresh
 mpv
 noto-fonts
 p7zip
-polybar-git
 pulseaudio
 python
 python-pip
 redshift
 ripgrep
 rofi
+simple-mtpfs
 stow
 thunar
 ttf-carlito
