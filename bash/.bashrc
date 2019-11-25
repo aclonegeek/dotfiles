@@ -19,10 +19,12 @@ alias m='make'
 alias pg='ping -c 3 www.google.com'
 alias ytdl='youtube-dl --extract-audio --audio-format mp3 $1'
 
-source /usr/share/fzf/completion.bash && source /usr/share/fzf/key-bindings.bash
+source /usr/share/skim/completion.bash && source /usr/share/skim/key-bindings.bash
 
 PS1='[\u@\h \W]\$ '
 
 export HISTSIZE=
 export HISTFILESIZE=
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+eval "$(starship init bash)"

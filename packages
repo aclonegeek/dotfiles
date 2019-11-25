@@ -14,7 +14,6 @@ feh
 ffmpeg
 firefox-nightly
 freetype2
-fzf
 gcc
 gdb
 git
@@ -34,6 +33,7 @@ redshift
 ripgrep
 rofi
 simple-mtpfs
+skim
 stow
 thunar
 ttf-carlito
