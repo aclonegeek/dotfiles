@@ -196,3 +196,7 @@ user_pref("alerts.showFavicons", false);
 
 // Disable Web Compatibility Reporter.
 user_pref("extensions.webcompat-reporter.enabled", false);
+
+// Themes.
+// Enable userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
