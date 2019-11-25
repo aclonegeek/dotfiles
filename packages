@@ -1,5 +1,5 @@
+[aur]
 alacritty
-arandr
 arc-gtk-theme
 aspell
 aspell-en
@@ -7,8 +7,6 @@ ccls-git
 clang
 cmake
 curl
-emacs (build from git)
-evince
 fd
 feh
 ffmpeg
@@ -34,6 +32,7 @@ ripgrep
 rofi
 simple-mtpfs
 skim
+starship
 stow
 thunar
 ttf-carlito
@@ -51,3 +50,6 @@ youtube-dl
 zathura
 zathura-pdf-mupdf
 zip
+
+[build]
+emacs
