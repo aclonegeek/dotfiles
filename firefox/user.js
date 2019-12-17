@@ -199,3 +199,4 @@ user_pref("extensions.webcompat-reporter.enabled", false);
 
 // Disable picture in picture.
 user_pref("media.videocontrols.picture-in-picture.enabled", false);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
