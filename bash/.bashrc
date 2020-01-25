@@ -17,7 +17,6 @@ alias g='git'
 alias ecfg='cd ~/.emacs.d'
 alias m='make'
 alias pg='ping -c 3 www.google.com'
-alias ytdl='youtube-dl --extract-audio --audio-format mp3 $1'
 
 source /usr/share/skim/completion.bash && source /usr/share/skim/key-bindings.bash
 
