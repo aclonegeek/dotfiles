@@ -14,7 +14,6 @@ alias ls='lsd'
 alias g='git'
 
 # misc
-alias ecfg='cd ~/.emacs.d'
 alias m='make'
 alias pg='ping -c 3 www.google.com'
 
