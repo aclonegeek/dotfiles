@@ -3,7 +3,6 @@ alacritty
 arc-gtk-theme
 aspell
 aspell-en
-ccls-git
 clang
 cmake
 curl
@@ -12,8 +11,6 @@ feh
 ffmpeg
 firefox-nightly
 freetype2
-gcc
-gdb
 git
 hunspell
 i3blocks
@@ -24,6 +21,7 @@ libreoffice-fresh
 mpv
 noto-fonts
 p7zip
+pcmanfm-gtk3
 pulseaudio
 python
 python-pip
@@ -34,7 +32,6 @@ simple-mtpfs
 skim
 starship
 stow
-thunar
 ttf-font-awesome-4
 ttf-iosevka
 unrar
@@ -51,3 +48,6 @@ zip
 
 [build]
 emacs
+gcc
+    - isl
+    - libmpc
