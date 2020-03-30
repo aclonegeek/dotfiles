@@ -55,12 +55,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Width of tab in cells (changes require restart).
-tabspaces: 4
-
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
