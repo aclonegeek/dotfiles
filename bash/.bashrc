@@ -24,5 +24,3 @@ PS1='[\u@\h \W]\$ '
 export HISTSIZE=
 export HISTFILESIZE=
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
-eval "$(starship init bash)"

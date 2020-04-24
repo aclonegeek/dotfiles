@@ -3,7 +3,6 @@ alacritty
 arc-gtk-theme
 aspell
 aspell-en
-clang
 cmake
 curl
 fd
@@ -18,19 +17,18 @@ i3-gaps
 i3lock
 keepassxc
 libreoffice-fresh
+llvm-git
+mesa-git
 mpv
 noto-fonts
 p7zip
 pcmanfm-gtk3
 pulseaudio
 python
-python-pip
 redshift
 ripgrep
 rofi
-simple-mtpfs
 skim
-starship
 stow
 ttf-font-awesome-4
 ttf-iosevka
@@ -49,5 +47,5 @@ zip
 [build]
 emacs
 gcc
-    - isl
-    - libmpc
+  - isl
+  - libmpc
