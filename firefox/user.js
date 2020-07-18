@@ -128,7 +128,7 @@ user_pref("browser.sessionstore.resume_from_crash", false);
  */
 // Display a warning for broken security.
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-// Display insecure icon and "Not Secur"e text on HTTP sites.
+// Display insecure icon and "Not Secure" text on HTTP sites.
 user_pref("security.insecure_connection_icon.enabled", true);
 user_pref("security.insecure_connection_text.enabled", true);
 user_pref("security.insecure_connection_icon.pbmode.enabled", true);
