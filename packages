@@ -1,8 +1,9 @@
-[aur]
+[packages]
 alacritty
 arc-gtk-theme
 aspell
 aspell-en
+clang
 cmake
 curl
 fd
@@ -17,8 +18,8 @@ i3-gaps
 i3lock
 keepassxc
 libreoffice-fresh
-llvm-git
-mesa-git
+llvm
+mesa
 mpv
 noto-fonts
 p7zip
