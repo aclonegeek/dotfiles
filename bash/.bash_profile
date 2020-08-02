@@ -9,6 +9,7 @@ export EDITOR="emacsclient -c"
 export TERMINAL="alacritty"
 export BROWSER="firefox-nightly"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export MOZ_X11_EGL=1
 
 if [[ ! $DISPLAY && XDG_VTNR -eq 1 ]]; then
     exec startx
