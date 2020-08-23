@@ -20,7 +20,7 @@ alias pg='ping -c 3 www.google.com'
 
 source /usr/share/skim/completion.bash && source /usr/share/skim/key-bindings.bash
 
-PS1='[\u@\h \W]\$ '
+PS1='[\w]\$ '
 
 export HISTSIZE=
 export HISTFILESIZE=
