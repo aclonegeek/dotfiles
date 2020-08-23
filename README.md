@@ -21,7 +21,7 @@ mkdir buildgcc
 ## Configure JIT
 ```
 cd buildjit
-../src/configure --enable-host-shared --enable-languages=jit --disable-bootstrap --disable-multilib
+../src/configure --prefix=/usr --enable-host-shared --enable-languages=jit --disable-bootstrap --disable-multilib
 ```
 
 ## Configure GCC
