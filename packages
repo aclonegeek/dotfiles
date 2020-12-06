@@ -25,6 +25,7 @@ mesa
 mpv
 noto-fonts
 p7zip
+paru
 pcmanfm-gtk3
 pulseaudio
 python
@@ -42,7 +43,6 @@ wget
 xorg-server
 xorg-xinit
 xrandr
-yay
 zathura
 zathura-pdf-mupdf
 zip
