@@ -11,12 +11,14 @@ feh
 ffmpeg
 firefox-nightly
 freetype2
+gcc
 git
 hunspell
 i3blocks
 i3-gaps
 i3lock
 keepassxc
+libgccjit
 libreoffice-fresh
 llvm
 mesa
@@ -47,6 +49,5 @@ zip
 
 [build]
 emacs
-gcc
   - isl
   - libmpc
