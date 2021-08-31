@@ -107,6 +107,11 @@ element alternate.active {
     text-color:       @alternate-active-foreground;
 }
 
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 sidebar {
     border:       2px 0px 0px;
     border-color: @separatorcolor;
