@@ -1,5 +1,4 @@
 configuration {
-    theme: "theme";
     fullscreen: false;
     font: "Noto Mono 15";
     bw: 0;
@@ -7,3 +6,4 @@ configuration {
     lines: 8;
     hide-scrollbar: true;
 }
+@theme "theme"
