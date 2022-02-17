@@ -124,6 +124,8 @@ user_pref("signon.formlessCapture.enabled", false);
  */
 // Disable resuming session from crash.
 user_pref("browser.sessionstore.resume_from_crash", false);
+// Save every minute.
+user_pref("browser.sessionstore.interval", 60000);
 
 /*
  * UI
@@ -173,6 +175,13 @@ user_pref("browser.link.open_newwindow.restriction", 0);
  */
 // Disable Microsoft Famuily Safety cert.
 user_pref("security.family_safety.mode", 0);
+
+/*
+ * RAM
+ */
+user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.memory.enable", true);
+user_pref("browser.cache.memory.capacity", 256000);
 
 /*
  * MISC
