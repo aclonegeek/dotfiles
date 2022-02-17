@@ -27,6 +27,7 @@ noto-fonts
 p7zip
 paru
 pcmanfm-gtk3
+profile-sync-daemon
 pulseaudio
 python
 redshift
@@ -34,11 +35,9 @@ ripgrep
 rofi
 skim
 stow
-ttf-font-awesome-4
 ttf-iosevka
 unrar
 unzip
-valgrind
 wget
 xorg-server
 xorg-xinit
