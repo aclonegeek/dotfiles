@@ -27,8 +27,10 @@ noto-fonts
 p7zip
 paru
 pcmanfm-gtk3
+pipewire
+pipewire-alsa
+pipewire-pulse
 profile-sync-daemon
-pulseaudio
 python
 redshift
 ripgrep
@@ -38,6 +40,7 @@ stow
 ttf-iosevka
 unrar
 unzip
+wireplumber
 wget
 xorg-server
 xorg-xinit
