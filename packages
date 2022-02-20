@@ -1,6 +1,5 @@
 [packages]
 alacritty
-arc-gtk-theme
 aspell
 aspell-en
 clang
@@ -30,6 +29,7 @@ pcmanfm-gtk3
 pipewire
 pipewire-alsa
 pipewire-pulse
+pop-gtk-theme
 profile-sync-daemon
 python
 redshift
