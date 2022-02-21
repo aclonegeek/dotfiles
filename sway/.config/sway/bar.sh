@@ -1,7 +1,5 @@
 #!/bin/bash
 
-time=$(date +'%R')
-
 caps_active=$(cat /sys/class/leds/*capslock/brightness)
 num_active=$(cat /sys/class/leds/*numlock/brightness)
 
@@ -24,6 +22,10 @@ numlock() {
     fi
 }
 
+thetime() {
+    echo "  $(date +'%R')"
+}
+
 volume() {
     amixer -M -D default get Master | rg -q off
     unmuted=$?
@@ -38,13 +40,13 @@ while true
 do
     # TODO: Surely a better way to do this...
     if [[ caps_active -eq 1 && num_active -eq 1 ]]; then
-        echo "NUM | CAPS | $(volume)    $time"
+        echo "NUM | CAPS | $(volume)  $(thetime)"
     elif [[ caps_active -eq 1 && num_active -eq 0 ]]; then
-        echo "CAPS | $(volume)    $time"
+        echo "CAPS | $(volume)  $(thetime)"
     elif [[ caps_active -eq 0 && num_active -eq 1 ]]; then
-        echo "NUM | $(volume)    $time"
+        echo "NUM | $(volume)  $(thetime)"
     else
-        echo "$(volume)    $time"
+        echo "$(volume)  $(thetime)"
     fi
     sleep 1
 done
