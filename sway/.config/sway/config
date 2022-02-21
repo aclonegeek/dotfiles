@@ -22,7 +22,7 @@ exec swayidle -w \
 input "type:pointer" {
     dwt disabled
     accel_profile "flat" # Disable mouse acceleration.
-    pointer_accel -0.2 # Mouse sensitivity.
+    pointer_accel -0.6 # Mouse sensitivity.
 }
 
 # Start terminal.
