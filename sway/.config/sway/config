@@ -167,6 +167,8 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Pop-dark'
     gsettings set $gnome-schema font-name 'Cantarell 11'
+    gsettings set $gnome-schema recent-files-max-age 0
+    gsettings set $gnome-schema recent-files-limit 0
 }
 
 exec_always gammastep
