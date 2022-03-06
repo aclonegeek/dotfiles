@@ -47,5 +47,4 @@ zip
 
 [build]
 emacs
-  - isl
-  - libmpc
+  - libisl
