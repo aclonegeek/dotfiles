@@ -30,6 +30,7 @@ pipewire-pulse
 pop-gtk-theme
 profile-sync-daemon
 python
+qt5-wayland
 ripgrep
 skim
 slurp
