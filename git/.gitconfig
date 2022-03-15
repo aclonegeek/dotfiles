@@ -8,3 +8,5 @@
     d = diff
     s = status
     l = log --oneline --all --graph --decorate
+[commit]
+    gpgsign = true
