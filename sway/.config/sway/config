@@ -157,6 +157,8 @@ hide_edge_borders both
 bindsym --release Caps_Lock exec pkill -SIGUSR1 bar.sh
 bindsym --release Num_Lock  exec pkill -SIGUSR2 bar.sh
 
+bindsym --release Print exec grim -g "$(slurp)" ~/$(date +%Y-%m-%d-%H:%M:%S).png
+
 # Audio controls.
 bindsym XF86AudioMute        exec amixer -q set Master toggle
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
