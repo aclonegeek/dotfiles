@@ -1,0 +1,6 @@
+font=Noto Mono 10
+background-color=#222222
+border-color=#383838
+
+[app-name="Spotify"]
+invisible=1
