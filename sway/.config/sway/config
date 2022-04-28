@@ -153,16 +153,27 @@ bar {
 default_border none
 hide_edge_borders both
 
+# Workspace assignments.
+assign [app_id="org.keepassxc.KeePassXC"] 10
+
 # Caps and num lock.
 bindsym --release Caps_Lock exec pkill -SIGUSR1 bar.sh
 bindsym --release Num_Lock  exec pkill -SIGUSR2 bar.sh
 
+# Screenshots.
 bindsym --release Print exec grim -g "$(slurp)" ~/$(date +%Y-%m-%d-%H:%M:%S).png
 
 # Audio controls.
 bindsym XF86AudioMute        exec amixer -q set Master toggle
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
+
+# Applications.
+bindsym F1 exec firefox-nightly
+bindsym F2 exec pcmanfm
+bindsym F3 exec emacs
+bindsym F9 exec spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym F10 exec keepassxc
 
 # GTK3.
 set $gnome-schema org.gnome.desktop.interface
