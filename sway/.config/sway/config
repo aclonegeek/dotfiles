@@ -172,7 +172,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
 bindsym F1 exec firefox-nightly
 bindsym F2 exec pcmanfm
 bindsym F3 exec emacs
-bindsym F9 exec spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym F9 exec spotify
 bindsym F10 exec keepassxc
 
 # GTK3.
