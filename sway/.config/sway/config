@@ -169,10 +169,10 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
 
 # Applications.
-bindsym F5 exec firefox-nightly
-bindsym F6 exec pcmanfm
-bindsym F7 exec emacs
-bindsym F8 exec spotify
+bindsym F6 exec firefox-nightly
+bindsym F7 exec pcmanfm
+bindsym F8 exec emacs
+bindsym F9 exec spotify
 bindsym F10 exec keepassxc
 
 # GTK3.
