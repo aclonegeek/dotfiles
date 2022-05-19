@@ -153,9 +153,6 @@ bar {
 default_border none
 hide_edge_borders both
 
-# Workspace assignments.
-assign [app_id="org.keepassxc.KeePassXC"] 10
-
 # Caps and num lock.
 bindsym --release Caps_Lock exec pkill -SIGUSR1 bar.sh
 bindsym --release Num_Lock  exec pkill -SIGUSR2 bar.sh
