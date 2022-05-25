@@ -67,7 +67,7 @@ do
     fi
 
     if [[ LAPTOP -eq 1 ]]; then
-        bar="$bar $(wifi) $(battery)"
+        bar="$bar $(wifi)  $(battery) "
     fi
 
     bar="$bar $(volume)  $(thetime)"
