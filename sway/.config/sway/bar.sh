@@ -1,5 +1,7 @@
 #!/bin/bash
 
+LAPTOP=0
+
 caps_active=$(cat /sys/class/leds/*capslock/brightness)
 num_active=$(cat /sys/class/leds/*numlock/brightness)
 
@@ -36,6 +38,22 @@ volume() {
     fi
 }
 
+battery() {
+    batterydir=/sys/class/power_supply/BAT1
+    if [[ ! -d  "$batterydir" ]]; then
+        return
+    fi
+
+    level=$(cat "$batterydir/capacity")
+    status=$(cat "$batterydir/status")
+
+    echo " $level% $status"
+}
+
+wifi() {
+    echo " $(grep wlp3s0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')"
+}
+
 while true
 do
     bar=""
@@ -48,8 +66,11 @@ do
         bar="$bar CAPS | "
     fi
 
-    bar="$bar $(volume)  $(thetime)"
+    if [[ LAPTOP -eq 1 ]]; then
+        bar="$bar $(wifi) $(battery)"
+    fi
 
+    bar="$bar $(volume)  $(thetime)"
     echo "$bar"
 
     sleep 1
