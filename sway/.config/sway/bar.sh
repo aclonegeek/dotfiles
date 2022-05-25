@@ -38,15 +38,19 @@ volume() {
 
 while true
 do
-    # TODO: Surely a better way to do this...
-    if [[ caps_active -eq 1 && num_active -eq 1 ]]; then
-        echo "NUM | CAPS | $(volume)  $(thetime)"
-    elif [[ caps_active -eq 1 && num_active -eq 0 ]]; then
-        echo "CAPS | $(volume)  $(thetime)"
-    elif [[ caps_active -eq 0 && num_active -eq 1 ]]; then
-        echo "NUM | $(volume)  $(thetime)"
-    else
-        echo "$(volume)  $(thetime)"
+    bar=""
+
+    if [[ num_active -eq 1 ]]; then
+        bar="NUM | "
     fi
+
+    if [[ caps_active -eq 1 ]]; then
+        bar="$bar CAPS | "
+    fi
+
+    bar="$bar $(volume)  $(thetime)"
+
+    echo "$bar"
+
     sleep 1
 done
