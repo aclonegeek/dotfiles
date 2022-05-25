@@ -51,7 +51,7 @@ battery() {
 }
 
 wifi() {
-    echo " $(grep wlp3s0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')"
+    echo " $(grep wlp3s0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')%"
 }
 
 while true
