@@ -6,6 +6,7 @@ bemenu
 clang
 cmake
 curl
+exfatprogs
 fd
 ffmpeg
 firefox-nightly
