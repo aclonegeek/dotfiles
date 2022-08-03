@@ -172,13 +172,11 @@ bindsym F8 exec emacs
 bindsym F9 exec spotify
 bindsym F10 exec keepassxc
 
-# GTK3.
-set $gnome-schema org.gnome.desktop.interface
+# GTK.
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Pop-dark'
-    gsettings set $gnome-schema font-name 'Cantarell 11'
-    gsettings set $gnome-schema recent-files-max-age 0
-    gsettings set $gnome-schema recent-files-limit 0
+    gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
+    gsettings set org.gnome.desktop.interface font-name 'Cantarell 11'
+    gsettings set org.gnome.desktop.privacy remember-recent-files false
 }
 
 exec_always gammastep
