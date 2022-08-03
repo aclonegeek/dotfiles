@@ -29,10 +29,10 @@ thetime() {
 }
 
 volume() {
-    amixer -M -D default get Master | rg -q off
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | rg -q "MUTED"
     unmuted=$?
     if [[ $unmuted -eq 1 ]]; then
-        echo "  $(amixer -M -D default get Master | rg -oP '(\d+)%')"
+        echo "  $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d. -f2)%"
     else
         echo "  MUTE"
     fi
