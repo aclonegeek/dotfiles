@@ -105,6 +105,8 @@ user_pref("browser.urlbar.usepreloadedtopurls.enabled", false);
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
 // Disable suggesting an open page.
 user_pref("browser.urlbar.suggest.openpage", false);
+// Disable suggesting quick actions.
+user_pref("browser.urlbar.suggest.quickactions", false);
 
 // Show the entire URL.
 user_pref("browser.urlbar.trimURLs", false);
