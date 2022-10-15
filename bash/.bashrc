@@ -23,7 +23,7 @@ configure_emacs() {
         --with-harfbuzz \
         --with-json \
         --with-modules \
-        --with-native-compilation \
+        --with-native-compilation=aot \
         --with-pgtk \
         --with-small-ja-dic \
         --with-threads \
