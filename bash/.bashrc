@@ -33,15 +33,12 @@ configure_emacs() {
         "CFLAGS=$cflags"
 }
 
+alias cat='bat'
+
 # ls stuff.
 alias l='ls -l'
 alias la='ls -al'
 alias ls='lsd'
-
-# Misc.
-alias cat='bat'
-alias m='make'
-alias pg='ping -c 3 www.google.com'
 
 source /usr/share/skim/completion.bash && source /usr/share/skim/key-bindings.bash
 
