@@ -7,6 +7,6 @@ function emacs_build -a type clean
     end
 
     emacs_configure $type
-    make -j$nproc
+    and make -j$nproc
     and sudo make install
 end
