@@ -3,7 +3,7 @@ My personal dotfiles that are managed using [GNU stow](https://www.gnu.org/softw
 
 # Usage
 ``` shell
-stow alacritty bash gammastep git gtk gnupg mako mpv paru sway zathura
+stow alacritty bash fish gammastep git gtk gnupg mako mpv paru sway zathura
 ```
 
 # Misc
