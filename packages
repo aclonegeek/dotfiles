@@ -32,7 +32,6 @@ pcmanfm-gtk3
 pipewire
 pipewire-alsa
 pipewire-pulse
-pop-gtk-theme
 profile-sync-daemon
 python
 qt5-wayland
@@ -52,7 +51,3 @@ wget
 zathura
 zathura-pdf-mupdf
 zip
-
-[build]
-emacs
-  - libisl
