@@ -1,11 +1,14 @@
 function emacs_configure -a type
     set -l cflags
+    set -l native_comp
 
     switch $type
         case "dev"
             set cflags "-Og -ggdb3 -pipe -mtune=native -march=native"
+            set native_comp "no"
         case "prod"
             set cflags "-O2 -pipe -mtune=native -march=native -fomit-frame-pointer"
+            set native_comp "aot"
         case '*'
             echo "Unrecognized build type"
             return 1
@@ -19,7 +22,7 @@ function emacs_configure -a type
         --with-harfbuzz \
         --with-json \
         --with-modules \
-        --with-native-compilation=aot \
+        --with-native-compilation=$native_comp \
         --with-pgtk \
         --with-small-ja-dic \
         --with-threads \
