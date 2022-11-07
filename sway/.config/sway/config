@@ -15,9 +15,10 @@ output * bg ~/Pictures/w.jpg fill
 output DP-1 resolution 1920x1080 position 1920 0
 output HDMI-A-1 resolution 1920x1080 position 0 0
 
-# Turn off displays after 15 minutes of inactivity.
+# Turn off displays after ~15 minutes of inactivity.
 exec swayidle -w \
-         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+         timeout 900 'swaylock -f -c 000000' \
+         timeout 950 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 input "type:pointer" {
     dwt disabled
@@ -30,6 +31,9 @@ bindsym $mod+Return exec $term
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
+
+# Lock computer.
+bindsym $mod+Shift+x exec swaylock -f -c 000000
 
 # Start launcher.
 bindsym $mod+d exec $menu
