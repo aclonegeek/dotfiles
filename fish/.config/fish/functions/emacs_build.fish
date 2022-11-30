@@ -8,5 +8,8 @@ function emacs_build -a type clean
 
     emacs_configure $type
     and make -j$nproc
-    and sudo make install
+
+    if [ "$type" = "prod" ]
+        sudo make install
+    end
 end
