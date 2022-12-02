@@ -4,10 +4,10 @@ function emacs_build -a type clean
     if test -n "$clean"
        git clean -xfd
        ./autogen.sh
+       emacs_configure $type
     end
 
-    emacs_configure $type
-    and make -j$nproc
+    make -j$nproc
 
     if [ "$type" = "prod" ]
         sudo make install
