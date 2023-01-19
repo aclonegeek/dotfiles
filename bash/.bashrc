@@ -40,8 +40,6 @@ alias l='ls -l'
 alias la='ls -al'
 alias ls='lsd'
 
-source /usr/share/skim/completion.bash && source /usr/share/skim/key-bindings.bash
-
 PS1='[\w]\$ '
 
 export HISTSIZE=
