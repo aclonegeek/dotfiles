@@ -11,9 +11,10 @@ set $menu bemenu-run -b | xargs swaymsg exec --
 
 font pango:Noto Mono 10
 
-output * bg ~/Pictures/w.jpg fill
-output DP-1 resolution 1920x1080 position 1920 0
-output HDMI-A-1 resolution 1920x1080 position 0 0
+output * bg ~/Pictures/w.png fill
+output DP-1 resolution 1920x1080@143.855Hz position 1920 0
+output DP-3 resolution 1920x1080 position 0 0
+output HDMI-A-1 resolution 3840x2160@60Hz position 3840 0
 
 # Turn off displays after ~15 minutes of inactivity.
 exec swayidle -w \
