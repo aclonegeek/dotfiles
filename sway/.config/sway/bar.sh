@@ -32,7 +32,7 @@ volume() {
     wpctl get-volume @DEFAULT_AUDIO_SINK@ | rg -q "MUTED"
     unmuted=$?
     if [[ $unmuted -eq 1 ]]; then
-        echo "  $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d. -f2)%"
+        echo "  $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2)%"
     else
         echo "  MUTE"
     fi
