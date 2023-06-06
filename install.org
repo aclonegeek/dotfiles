@@ -1,0 +1,85 @@
+* Arch Linux Install
+** Partitioning
+- Identify the disk to format/partition:
+  - =lsblk=
+- =gdisk <DISK>=
+  - Partition 1: EFI (ef00) 512MB
+  - Partition 2: Linux LVM (8e00) Remainder
+- Format boot partition:
+  - =mkfs.fat -F32 <PARTITION-1>=
+** Encryption
+- Encrypt the disk:
+  - =cryptsetup luksFormat <PARTITION-2>=
+- Open the disk:
+  - =cryptsetup open --type luks <PARTITION-2> cryptlvm=
+  - The decrypted container is now available at =/dev/mapper/cryptlvm=.
+- Create a physical volume:
+  - =pvcreate /dev/mapper/cryptlvm=
+- Create a volume group:
+  - =vgcreate volume /dev/mapper/cryptlvm=
+- Create logical volumes on the volume group:
+  - =lvcreate -L64G volume -n root=
+  - =lvcreate -l 100%FREE volume -n home=
+  - =lvreduce -L -256M volume/home=
+- Format filesystems on each logical volume:
+  - =mkfs.ext4 /dev/volume/root=
+  - =mkfs.ext4 /dev/volume/home=
+- Mount the filesystems:
+  - =mount /dev/volume/root /mnt=
+  - =mount --mkdir /dev/volume/home /mnt/home=
+  - =mount --mkdir <PARTITION-1> /mnt/boot=
+** Installation
+- Install necessary packages:
+  - =pacstrap /mnt base base-devel linux linux-firmware lvm2 amd-ucode nano=
+- Generate fstab:
+  - =genfstab -U /mnt >> /mnt/etc/fstab=
+- chroot into the system:
+  - =arch-chroot /mnt=
+- Set time locale:
+  - =ln -sf /usr/share/zoneinfo/Canada/Eastern /etc/localtime=
+- Set clock:
+  - =hwclock --systohc=
+- Edit =/etc/locale.gen= and uncomment desired localizations (=en_CA.UTF-8 UTF-8=).
+- Run =locale-gen=.
+- Create locale config:
+  - =locale > /etc/locale.conf=
+  - Edit with appropriate language code (=LANG=en_CA.UTF-8=).
+- Add a hostname:
+  - =nano /etc/hostname=
+- Update =/etc/hosts= with hostname:
+  - =127.0.1.1 <HOSTNAME>.localdomain <HOSTNAME>=
+- Update mkinitcpio hooks (=/etc/mkinitcpio.conf=):
+  - =HOOKS=(base udev autodetect modconf kms keyboard keymap consolefont block encrypt lvm2 filesystems fsck)=
+- Regenerate initramfs:
+  - =mkinitcpio -p linux=
+- Install bootloader:
+  - =bootctl --path=/boot/ install=
+- Create bootloader (=/boot/loader/loader.conf=):
+#+begin_src
+  default arch
+  timeout 3
+  editor 0
+#+end_src
+- Create bootloader entry (=/boot/loader/entries/arch.conf=):
+  - <PARTITION-2 UUID> can be obtained via the =blkid <PARTITION-2>= command.
+#+begin_src
+  title Arch Linux
+  linux /vmlinuz-linux
+  initrd /amd-ucode.img
+  initrd /initramfs-linux.img
+  options cryptdevice=UUID=<PARTITION-2 UUID>:cryptlvm:allow-discard root=/dev/volume/root quiet rw
+#+end_src
+- Set root password: =passwd=
+- Exit chroot: =exit=
+- Unmount:
+  - =umount -R /mnt=
+- Reboot: =reboot=
+** Post-Install
+*** Network
+- Enable NTP: =timedatectl set-ntp true=
+- Create user: =useradd -m -G wheel <NAME>=
+- Setup =systemd-networkd= and =systemd-resolved=:
+  - =sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolve.conf=
+  - =sudo systemctl enable --now systemd-networkd=
+  - =sudo systemctl enable --now systemd-resolved=
+- Enable TRIM: =sudo systemctl enable --now fstrim.timer=
