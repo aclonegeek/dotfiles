@@ -83,3 +83,10 @@
   - =sudo systemctl enable --now systemd-networkd=
   - =sudo systemctl enable --now systemd-resolved=
 - Enable TRIM: =sudo systemctl enable --now fstrim.timer=
+*** Auto-Login
+- Create =/etc/systemd/system/getty@tty1.service.d/autologin.conf= with the following contents:
+#+begin_src
+  [Service]
+  ExecStart=
+  ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username %I $TERM
+#+end_src
