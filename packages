@@ -53,6 +53,7 @@ zip
 [aur]
 firefox-nightly-bin
 shellcheck-bin
+mullvad-vpn-bin
 
 [build]
 emacs
