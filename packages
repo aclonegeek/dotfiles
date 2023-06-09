@@ -44,6 +44,7 @@ ttc-iosevka
 unzip
 wireplumber
 xdg-user-dirs
+xorg-xwayland
 zathura
 zathura-pdf-mupdf
 zip
