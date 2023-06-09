@@ -31,6 +31,7 @@ pipewire-alsa
 pipewire-pulse
 profile-sync-daemon
 python
+qbittorrent
 qt5-wayland
 ripgrep
 slurp
