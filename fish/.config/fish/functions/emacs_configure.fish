@@ -25,6 +25,7 @@ function emacs_configure -a type
         --with-native-compilation=$native_comp \
         --with-pgtk \
         --with-small-ja-dic \
+        --with-tree-sitter \
         --with-threads \
         --with-toolkit-scroll-bars \
         --with-xml2 \
