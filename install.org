@@ -77,6 +77,8 @@
 ** Post-Install
 - Enable TRIM: =sudo systemctl enable --now fstrim.timer=
 - Improved encrypted SSD performance: =sudo cryptsetup --allow-discards --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh cryptlvm=
+- If dual-booting with Windows:
+  - Keep Windows time in sync with Linux: =sudo timedatectl set-local-rtc 1 --adjust-system-clock=
 *** Network
 - Enable NTP: =timedatectl set-ntp true=
 - Create user: =useradd -m -G wheel <NAME>=
