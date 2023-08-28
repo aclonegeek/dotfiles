@@ -75,6 +75,8 @@
   - =umount -R /mnt=
 - Reboot: =reboot=
 ** Post-Install
+- Enable TRIM: =sudo systemctl enable --now fstrim.timer=
+- Improved encrypted SSD performance: =sudo cryptsetup --allow-discards --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh cryptlvm=
 *** Network
 - Enable NTP: =timedatectl set-ntp true=
 - Create user: =useradd -m -G wheel <NAME>=
@@ -82,7 +84,6 @@
   - =sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolve.conf=
   - =sudo systemctl enable --now systemd-networkd=
   - =sudo systemctl enable --now systemd-resolved=
-- Enable TRIM: =sudo systemctl enable --now fstrim.timer=
 *** Auto-Login
 - Create =/etc/systemd/system/getty@tty1.service.d/autologin.conf= with the following contents:
 #+begin_src
