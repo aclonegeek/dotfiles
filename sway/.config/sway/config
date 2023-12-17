@@ -176,7 +176,7 @@ bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 bindsym F6 exec firefox-nightly
 bindsym F7 exec pcmanfm
 bindsym F8 exec emacs
-bindsym F9 exec spotify
+bindsym F9 exec spotify-launcher
 bindsym F10 exec keepassxc
 
 # GTK.
