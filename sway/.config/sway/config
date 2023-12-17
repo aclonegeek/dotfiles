@@ -168,6 +168,7 @@ bindsym --release Num_Lock  exec pkill -SIGUSR2 bar.sh
 bindsym --release Print exec grim -g "$(slurp)" ~/$(date +%Y-%m-%d-%H:%M:%S).png
 
 # Audio controls.
+bindsym XF86AudioPlay        exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioMute        exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
