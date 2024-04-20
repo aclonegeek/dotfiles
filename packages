@@ -43,6 +43,7 @@ swayidle
 swaylock
 ttc-iosevka
 unzip
+wireguard-tools
 wireplumber
 xdg-user-dirs
 xorg-xwayland
