@@ -14,7 +14,7 @@ function vpn -a state config
             return 1
     end
 
-    if begin; [ $state = "on" ]; and not test -n "$config"; end
+    if not test -n "$config"
         echo "ERROR: Configuration unspecified"
         return 1
     end
