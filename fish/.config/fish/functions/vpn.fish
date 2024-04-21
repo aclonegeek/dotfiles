@@ -20,12 +20,12 @@ function vpn -a state config
     end
 
     # Killswitch.
-    if not grep -q "PostUp" $config
-        sed -i '/DNS/a PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT' $config
-        sed -i '/PostUp/a PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT' $config
+    if begin; [ $state = "on" ]; and not sudo grep -q "PostUp" $config; end
+        sudo sed -i '/DNS/a PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT' $config
+        sudo sed -i '/PostUp/a PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT' $config
     end
 
-    sysctl -w net.ipv6.conf.all.disable_ipv6=$disable_ipv6
+    sudo sysctl -w net.ipv6.conf.all.disable_ipv6=$disable_ipv6
 
-    wg-quick $wg_state $config
+    sudo wg-quick $wg_state $config
 end
