@@ -1,4 +1,7 @@
 function vpn -a state config
+    set -l disable_ipv6
+    set -l wg_state
+
     switch $state
         case "on"
             set disable_ipv6 1
@@ -21,9 +24,6 @@ function vpn -a state config
         sed -i '/DNS/a PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT' $config
         sed -i '/PostUp/a PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT' $config
     end
-
-    set -l disable_ipv6
-    set -l wg_state
 
     sysctl -w net.ipv6.conf.all.disable_ipv6=$disable_ipv6
 
