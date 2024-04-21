@@ -25,7 +25,7 @@ function vpn -a state config
             return 1
     end
 
-    sudo sysctl -w net.ipv6.conf.all.disable_ipv6=$disable_ipv6
+    sysctl -w net.ipv6.conf.all.disable_ipv6=$disable_ipv6
 
-    sudo wg-quick $wg_state $config
+    wg-quick $wg_state $config
 end
