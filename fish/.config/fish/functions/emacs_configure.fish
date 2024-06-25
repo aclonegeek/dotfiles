@@ -20,7 +20,6 @@ function emacs_configure -a type
         --with-cairo \
         --with-gnutls \
         --with-harfbuzz \
-        --with-json \
         --with-modules \
         --with-native-compilation=$native_comp \
         --with-pgtk \
