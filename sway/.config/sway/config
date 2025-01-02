@@ -17,6 +17,8 @@ output HDMI-A-1 resolution 1920x1080 position 0 0
 output HDMI-A-2 scale 2
 output HDMI-A-2 resolution 3840x2160@60Hz position 3840 0
 
+workspace 1 output DP-1
+workspace 2 output HDMI-A-1
 workspace 7 output HDMI-A-2
 
 # Turn off displays after ~15 minutes of inactivity.
@@ -175,7 +177,7 @@ bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 
 # Applications.
-bindsym F6 exec firefox-nightly
+bindsym F6 exec firefox
 bindsym F7 exec pcmanfm
 bindsym F8 exec emacs
 bindsym F9 exec spotify-launcher
