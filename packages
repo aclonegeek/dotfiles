@@ -8,6 +8,7 @@ curl
 exfatprogs
 fd
 ffmpeg
+firefox
 fish
 freetype2
 gammastep
@@ -58,11 +59,8 @@ zathura-pdf-mupdf
 zip
 
 [aur]
-firefox-nightly-bin
-shellcheck-bin
-mullvad-vpn-bin
+paru-bin
 
 [build]
 emacs
-paru
 tree-sitter
