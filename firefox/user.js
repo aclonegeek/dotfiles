@@ -28,6 +28,7 @@ user_pref("toolkit.cosmeticAnimations.enabled", false);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
 user_pref("full-screen-api.warning.timeout", 0);
+user_pref("ui.prefersReducedMotion", 1);
 
 /*
  * TELEMETRY
@@ -145,11 +146,8 @@ user_pref("extensions.getAddons.showPane", false);
 // Disable recommendations in about:addons' Extensions and Themes panes.
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 
-/*
- * PLUGINS
- */
-// Disable Flash plugin.
-user_pref("plugin.state.flash", 0);
+// Enable compact mode.
+user_pref("browser.compactmode.show", true);
 
 /*
  * WINDOW
