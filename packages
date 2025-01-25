@@ -36,6 +36,7 @@ python
 qbittorrent
 qt5-wayland
 ripgrep
+sbctl
 slurp
 spotify-launcher
 stow
