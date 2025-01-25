@@ -93,3 +93,35 @@
   ExecStart=
   ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username %I $TERM
 #+end_src
+** Secure Boot
+*** Unified Kernel Image
+- Edit =/etc/mkinitcpio.d/linux.preset=
+#+begin_ini
+ALL_microcode=(/boot/*-ucode.img)
+default_efi_image="/boot/EFI/Linux/linux.efi"
+fallback_efi_image="/boot/EFI/Linux/linux-fallback.efi"
+#+end_ini
+- =cat /proc/cmdline > /etc/kernel/cmdline=
+- =mkinitcpio -P linux=
+- Reboot and ensure everything works - there should be 2 entries for Arch Linux.
+*** sbctl
+- Boot into BIOS.
+  - Turn off Secure Boot.
+  - Delete all Secure Boot keys and turn Provision Factory Default Keys off.
+  - Reboot into Arch Linux.
+- =sbctl status= and make sure we are in Setup Mode and Secure Boot is off.
+- Run the following commands:
+#+begin_bash
+sbctl create-keys
+sbctl enroll-keys --microsoft
+
+sbctl sign -s /boot/EFI/Linux/linux.efi
+sbctl sign -s /boot/EFI/Linux/linux-fallback.efi
+sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
+sbctl sign -s /boot/EFI/Boot/BOOTX64.efi
+sbctl sign -s /boot/EFI/Microsoft/bootmgfw.efi
+sbctl sign -s /boot/EFI/Microsoft/bootmgr.efi
+sbctl sign -s /boot/EFI/Microsoft/memtest.efi
+#+end_bash
+- Reboot into BIOS and turn on Secure Boot with Maximum Security.
+- Arch Linux and Windows should work.
