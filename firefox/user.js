@@ -190,8 +190,6 @@ user_pref("browser.cache.memory.capacity", 256000);
 user_pref("accessibility.force_disabled", 1);
 // Disable sending additional analytics to web servers.
 user_pref("beacon.enabled", false);
-// Enable Do Not Track HTTP header.
-user_pref("privacy.donottrackheader.enabled", true);
 // Disable pocket.
 user_pref("extensions.pocket.enabled", false);
 
