@@ -21,6 +21,7 @@ function emacs_configure -a type
         --with-gnutls \
         --with-harfbuzz \
         --with-modules \
+        --with-mps \
         --with-native-compilation=$native_comp \
         --with-pgtk \
         --with-small-ja-dic \
