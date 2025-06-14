@@ -1,7 +1,6 @@
 [packages]
 alacritty
 bat
-bemenu
 clang
 cmake
 curl
@@ -52,6 +51,7 @@ vulkan-radeon
 vulkan-tools
 wireguard-tools
 wireplumber
+wmenu
 xdg-user-dirs
 xorg-xwayland
 yt-dlp
