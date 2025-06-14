@@ -27,7 +27,7 @@ white = "0xcfd8dc"
 yellow = "0xffc107"
 
 [colors.primary]
-background = "0x222222"
+background = "0x000000"
 foreground = "0xeceff1"
 
 [cursor]
