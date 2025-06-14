@@ -125,6 +125,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 bindsym $mod+minus scratchpad show
 
+# Toggle statusbar.
+bindsym $mod+o bar mode toggle
+
 mode "resize" {
     # left will shrink the containers width.
     # right will grow the containers width.
@@ -148,6 +151,9 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
+
+    hidden_state hide
+    mode hide
 
     status_command while ~/.config/sway/bar.sh; do sleep 1; done
 
