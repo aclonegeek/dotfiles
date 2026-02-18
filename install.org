@@ -49,7 +49,7 @@
 - Update =/etc/hosts= with hostname:
   - =127.0.1.1 <HOSTNAME>.localdomain <HOSTNAME>=
 - Update mkinitcpio hooks (=/etc/mkinitcpio.conf=):
-  - =HOOKS=(base udev autodetect modconf kms keyboard keymap consolefont block encrypt lvm2 filesystems fsck)=
+  - =HOOKS=(base udev autodetect microcode modconf kms keyboard keymap block encrypt lvm2 filesystems fsck)=
 - Regenerate initramfs:
   - =mkinitcpio -p linux=
 - Install bootloader:
@@ -97,9 +97,7 @@
 *** Unified Kernel Image
 - Edit =/etc/mkinitcpio.d/linux.preset=
 #+begin_ini
-ALL_microcode=(/boot/*-ucode.img)
-default_efi_image="/boot/EFI/Linux/linux.efi"
-fallback_efi_image="/boot/EFI/Linux/linux-fallback.efi"
+default_uki="/boot/EFI/Linux/linux.efi"
 #+end_ini
 - =cat /proc/cmdline > /etc/kernel/cmdline=
 - =mkinitcpio -P linux=
@@ -116,7 +114,6 @@ sbctl create-keys
 sbctl enroll-keys --microsoft
 
 sbctl sign -s /boot/EFI/Linux/linux.efi
-sbctl sign -s /boot/EFI/Linux/linux-fallback.efi
 sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
 sbctl sign -s /boot/EFI/Boot/BOOTX64.efi
 sbctl sign -s /boot/EFI/Microsoft/bootmgfw.efi
