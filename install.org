@@ -93,6 +93,9 @@
   ExecStart=
   ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username %I $TERM
 #+end_src
+*** Package-specific
+**** realtime-privileges
+- Add user to the =realtime= group: =sudo usermod -aG realtime <USER>=
 ** Secure Boot
 *** Unified Kernel Image
 - Edit =/etc/mkinitcpio.d/linux.preset=
