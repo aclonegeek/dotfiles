@@ -22,6 +22,18 @@ user_pref("browser.newtabpage.activity-stream.feeds.showSponsoredTopSites", fals
 user_pref("browser.newtabpage.activity-stream.default.sites", "");
 
 /*
+ * AI
+ */
+user_pref("browser.ml.enable", false);
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.menu", false);
+user_pref("browser.ml.linkPreview.enabled", false);
+user_pref("browser.ml.pageAssist.enabled", false);
+user_pref("browser.ml.smartAssist.enabled", false);
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("extensions.ml.enabled", false);
+
+/*
  * ANIMATION
  */
 user_pref("toolkit.cosmeticAnimations.enabled", false);
@@ -146,8 +158,8 @@ user_pref("extensions.getAddons.showPane", false);
 // Disable recommendations in about:addons' Extensions and Themes panes.
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 
-// Enable compact mode.
 user_pref("browser.compactmode.show", true);
+user_pref("browser.tabs.groups.enabled", false);
 
 /*
  * WINDOW
@@ -190,8 +202,9 @@ user_pref("browser.cache.memory.capacity", 256000);
 user_pref("accessibility.force_disabled", 1);
 // Disable sending additional analytics to web servers.
 user_pref("beacon.enabled", false);
-// Disable pocket.
 user_pref("extensions.pocket.enabled", false);
+
+user_pref("middlemouse.paste", false);
 
 // Backspace goes to previous page.
 user_pref("browser.backspace_action", 0);
