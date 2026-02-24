@@ -52,6 +52,7 @@ vulkan-radeon
 vulkan-tools
 wireguard-tools
 wireplumber
+wireproxy
 wmenu
 xdg-user-dirs
 xorg-xwayland
