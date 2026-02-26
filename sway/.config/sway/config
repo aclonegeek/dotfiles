@@ -7,8 +7,6 @@ set $right l
 
 set $term alacritty
 
-set $menu wmenu-run -b
-
 font pango:Noto Mono 10
 
 output * bg ~/Pictures/w.png fill
@@ -42,7 +40,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+x exec swaylock -f -c 000000
 
 # Start launcher.
-bindsym $mod+d exec $menu
+# HACK: Workaround for https://github.com/swaywm/sway/issues/8655
+bindsym $mod+d exec "sleep 0.1; wmenu-run -b"
 
 # Mouse button for dragging.
 floating_modifier $mod normal
