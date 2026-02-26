@@ -192,6 +192,7 @@ exec_always {
     gsettings set org.gnome.desktop.interface icon-theme 'Flat-Remix-Blue-Dark'
     gsettings set org.gnome.desktop.interface font-name 'Inter 11'
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
     gsettings set org.gnome.desktop.privacy remember-recent-files false
 }
 
