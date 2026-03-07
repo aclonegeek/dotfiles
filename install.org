@@ -86,6 +86,18 @@
   - =sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolve.conf=
   - =sudo systemctl enable --now systemd-networkd=
   - =sudo systemctl enable --now systemd-resolved=
+- Network file =/etc/systemd/network/20-wired.network=:
+#+BEGIN_SRC conf
+[Match]
+Name=<INTERFACE-NAME>
+
+[Network]
+DHCP=yes
+DNS=<PUT-CUSTOM-DNS-SERVER-HERE-AND-ADD-MORE-ENTRIES-FOR-MORE>
+
+[DHCP]
+UseDNS=false
+#+END_SRC
 *** Auto-Login
 - Create =/etc/systemd/system/getty@tty1.service.d/autologin.conf= with the following contents:
 #+begin_src
