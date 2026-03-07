@@ -1,4 +1,4 @@
-function vpn -a state config
+function vpn-full -a state config
     set -l disable_ipv6
     set -l wg_state
 
