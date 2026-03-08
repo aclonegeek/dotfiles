@@ -15,6 +15,7 @@ gcc
 git
 grim
 inter-font
+jq
 keepassxc
 libnatpmp
 libgccjit
